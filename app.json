@@ -1,0 +1,79 @@
+{
+  "expo": {
+    "name": "BCL",
+    "scheme": "bcl",
+    "slug": "bcl",
+    "version": "1.0.10",
+    "orientation": "portrait",
+    "icon": "./src/assets/icon.png",
+    "notification": {
+      "icon": "./src/assets/noti-icon.png",
+      "color": "#ffffff"
+    },
+    "userInterfaceStyle": "light",
+    "owner": "bcl-app",
+    "splash": {
+      "image": "./src/assets/splash.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#000000"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "usesAppleSignIn": true,
+      "supportsTablet": false,
+      "bundleIdentifier": "com.bcl.fish",
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "フォトライブラリにアクセスし、画像や動画を選択して投稿やプロフィールにアップロードすることができます。"
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./src/assets/icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "permissions": [
+        "POST_NOTIFICATIONS",
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO"
+      ],
+      "package": "com.bcl.fish",
+      "googleServicesFile": "./google-services.json",
+      "versionCode": 1
+    },
+    "web": {
+      "favicon": "./src/assets/favicon.png"
+    },
+    "plugins": [
+      "expo-secure-store",
+      "expo-router",
+      "expo-apple-authentication",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "カメラは、投稿やプロフィールにアップロードするための写真やビデオを撮影するために使用されます。",
+          "microphonePermission": "マイクは、投稿にアップロードするビデオ撮影の音声を録音するために使用されます。",
+          "recordAudioAndroid": true
+        }
+      ]
+    ],
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "8b44f008-d096-4701-b3d6-3224a070342d"
+      }
+    },
+    "updates": {
+      "enabled": true,
+      "checkAutomatically": "ON_LOAD",
+      "fallbackToCacheTimeout": 1000,
+      "url": "https://u.expo.dev/8b44f008-d096-4701-b3d6-3224a070342d"
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    }
+  }
+}

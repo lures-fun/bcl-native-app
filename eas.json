@@ -1,0 +1,49 @@
+{
+  "cli": {
+    "version": ">= 10.2.4",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "production": {
+      "channel": "main",
+      "env": {
+        "NODE_ENV": "production",
+        "ENV_FILE": ".env.production"
+      },
+      "android": {
+        "buildType": "app-bundle"
+      },
+      "ios": {
+        "simulator": false
+      },
+      "autoIncrement": true
+    },
+    "development": {
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "preview": {
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "android": {
+        "buildType": "apk"
+      },
+      "ios": {
+        "simulator": true
+      },
+      "distribution": "internal"
+    }
+  },
+  "submit": {
+    "production": {
+      "android": {
+        "serviceAccountKeyPath": "./credentials/android/google_developer_key.json",
+        "track": "internal"
+      }
+    }
+  }
+}
